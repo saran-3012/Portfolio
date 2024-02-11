@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Protest Revolution&effect=neon|outline|emboss|shadow-multiple");
+@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Protest Revolution|Protest Guerrilla&effect=neon");
 ::-webkit-scrollbar{
     background: #e0e0e0;
 }
@@ -79,7 +79,7 @@ body{
     height: 0.4rem;
     background-color: aqua;
     width: 0%;
-    transition: 200ms ease;
+    transition: all 200ms ease;
 }
 .menu_items a:hover::after{
     width: 100%;
@@ -149,10 +149,84 @@ body{
     background-image: url(./Images/Profile_pic.jpg);
     background-size: cover;
 }
-
 #skills{
-    background-color: rgb(255, 21, 21);
+    flex-direction: column;
 }
+.skills_header{
+    display: flex;
+    align-items: center;
+}
+.skills_header > p{
+    font-family: 'Protest Guerrilla';
+    font-size: 60px;
+    margin: 0px 2rem ;
+}
+.arrows{
+    height: 60px;
+    aspect-ratio: 1;
+}
+.arrows:hover{
+    filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
+}
+.skills_container{
+    margin: auto;
+    width: 80%;
+    height: fit-content;
+    padding: 2% 0%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.skills_items{
+    position: relative;
+    margin: 2% 3%;
+    width: 13%;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    transition: all 100ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skill_images{
+    max-width: 90%;
+    max-height: 90%;
+}
+.skill_info{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.skill_info > p{
+    font-size: larger;
+}
+.skills_items:hover{
+    transform: scale(1.4);
+}
+.skills_items:hover .skill_info{
+    display: flex;
+    backdrop-filter: blur(6.6px) saturate(100%);
+}
+.skills_items:nth-child(1):hover, .skills_items:nth-child(3):hover, .skills_items:nth-child(5):hover, .skills_items:nth-child(6):hover, .skills_items:nth-child(7):hover{
+    border: .5rem solid rgb(106, 255, 0);
+}
+.skills_items:nth-child(2):hover, .skills_items:nth-child(4):hover{
+    border: .5rem solid rgb(251, 255, 0);
+}
+.skills_items:nth-child(8):hover, .skills_items:nth-child(10):hover{
+    border: .5rem solid rgb(255, 166, 0);
+}
+.skills_items:nth-child(9):hover{
+    border: .5rem solid rgb(255, 0, 0);
+}
+
 #projects{
     background-color: rgb(44, 161, 69);
 }
