@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Protest Revolution|Protest Guerrilla&effect=neon");
+@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Protest Revolution|Protest Guerrilla|Electrolize&effect=neon");
 ::-webkit-scrollbar{
     background: #e0e0e0;
 }
@@ -153,6 +153,7 @@ body{
     flex-direction: column;
 }
 .skills_header{
+    margin-top: .5rem;
     display: flex;
     align-items: center;
 }
@@ -164,9 +165,6 @@ body{
 .arrows{
     height: 60px;
     aspect-ratio: 1;
-}
-.arrows:hover{
-    filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
 }
 .skills_container{
     margin: auto;
@@ -184,7 +182,7 @@ body{
     width: 13%;
     border-radius: 50%;
     aspect-ratio: 1;
-    transition: all 100ms ease;
+    transition: all 150ms ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,7 +203,9 @@ body{
     justify-content: center;
 }
 .skill_info > p{
-    font-size: larger;
+    font-size: large;
+    font-family: 'Electrolize';
+    font-weight: bolder;
 }
 .skills_items:hover{
     transform: scale(1.4);
@@ -220,10 +220,10 @@ body{
 .skills_items:nth-child(2):hover, .skills_items:nth-child(4):hover{
     border: .5rem solid rgb(251, 255, 0);
 }
-.skills_items:nth-child(8):hover, .skills_items:nth-child(10):hover{
+.skills_items:nth-child(8):hover{
     border: .5rem solid rgb(255, 166, 0);
 }
-.skills_items:nth-child(9):hover{
+.skills_items:nth-child(9):hover, .skills_items:nth-child(10):hover{
     border: .5rem solid rgb(255, 0, 0);
 }
 
