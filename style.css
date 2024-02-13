@@ -203,7 +203,7 @@ body{
     justify-content: center;
 }
 .skill_info > p{
-    font-size: large;
+    font-size: medium;
     font-family: 'Electrolize';
     font-weight: bolder;
 }
