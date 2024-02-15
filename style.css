@@ -226,6 +226,10 @@ body{
     font-size: medium;
     font-family: 'Electrolize';
     font-weight: bolder;
+    text-shadow: -1px 1px 0 whitesmoke,
+                1px 1px 0 whitesmoke,
+                1px -1px 0 whitesmoke,
+                -1px -1px 0 whitesmoke;
 }
 #projects{
     background-color: rgb(44, 161, 69);
