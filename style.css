@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Merienda|Protest Guerrilla|Electrolize&effect=neon");
 ::-webkit-scrollbar{
     background: #12121200;
-    width: 1.5rem;
+    width: 0.75rem;
 }
 ::-webkit-scrollbar-thumb{
     border-radius: 10px;
@@ -134,17 +134,15 @@ body{
             linear-gradient(336deg, rgb(16, 16, 159), rgba(0,0,255,0) );
 }
 .resume_download:hover{
-    transform: translate3d(-0.5rem,-0.5rem,-0.5rem);
-    box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.815);
+    box-shadow: 0 0 50px 10px rgb(68, 0, 255);
 }
 .resume_download:active{
-    transform: translate3d(0.5rem,0.5rem,0.5rem);
-    box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.815);
+    box-shadow: 0 0 50px 20px rgb(68, 0, 255);
 }
 .about_image_container{
-    width: 30rem;
+    width: 28rem;
     aspect-ratio: 1;
-    border-radius: 10% 30%;
+    border-radius: 28% 72% 74% 26% / 30% 50% 50% 70% ;
     background-image: url(./Images/Profile_pic.jpg);
     background-size: cover;
 }
