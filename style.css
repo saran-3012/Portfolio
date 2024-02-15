@@ -176,13 +176,33 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 .skills_items{
     position: relative;
     margin: 2% 3%;
-    width: 13%;
+    width: calc(13% + 0.5rem);
     border-radius: 50%;
     aspect-ratio: 1;
     transition: all 150ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skills_items:hover{
+    transform: scale(1.4);
+}
+.skills_items:hover .skill_info{
+    display: flex;
+    backdrop-filter: blur(6.6px) saturate(100%);
+}
+.skills_items:hover .percentage_mask{
+    background-color: black;
+}
+.percentage_mask{
+    position: relative;
+    width: 90%;
+    aspect-ratio: 1;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,29 +227,9 @@ body{
     font-family: 'Electrolize';
     font-weight: bolder;
 }
-.skills_items:hover{
-    transform: scale(1.4);
-}
-.skills_items:hover .skill_info{
-    display: flex;
-    backdrop-filter: blur(6.6px) saturate(100%);
-}
-.skills_items:nth-child(1):hover, .skills_items:nth-child(3):hover, .skills_items:nth-child(5):hover, .skills_items:nth-child(6):hover, .skills_items:nth-child(7):hover{
-    border: .5rem solid rgb(106, 255, 0);
-}
-.skills_items:nth-child(2):hover, .skills_items:nth-child(4):hover{
-    border: .5rem solid rgb(251, 255, 0);
-}
-.skills_items:nth-child(8):hover{
-    border: .5rem solid rgb(255, 166, 0);
-}
-.skills_items:nth-child(9):hover, .skills_items:nth-child(10):hover{
-    border: .5rem solid rgb(255, 0, 0);
-}
-
 #projects{
     background-color: rgb(44, 161, 69);
 }
 #contact{
-    background-color: rgb(49, 6, 223);
+    background-color: rgb(206, 31, 31);
 }
