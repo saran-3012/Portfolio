@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Zen Kurenaido|Protest Guerrilla|Electrolize&effect=neon");
+@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tektur|Zen Kurenaido|Protest Guerrilla|Electrolize&effect=neon");
 ::-webkit-scrollbar{
     background: #12121200;
     width: 0.75rem;
@@ -39,7 +39,7 @@ body{
     font-weight: bolder;
     display: flex;
     font-variant: small-caps;
-    font-family:'Tapestry';
+    font-family:'Zen Kurenaido';
     margin-left: 2rem;
     margin-right: auto;
     height: fit-content;
