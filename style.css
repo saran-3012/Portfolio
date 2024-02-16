@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Merienda|Protest Guerrilla|Electrolize&effect=neon");
+@import url("https://fonts.googleapis.com/css?family=Train One|Big Shoulders Stencil Text|Tapestry|Tektur|Zen Kurenaido|Protest Guerrilla|Electrolize&effect=neon");
 ::-webkit-scrollbar{
     background: #12121200;
     width: 0.75rem;
@@ -26,7 +26,7 @@ body{
     top: 0.5rem;
     display: flex;
     align-items: center;
-    background-color: rgba(18, 18, 18, 0.587);
+    background-color: rgba(18, 18, 18, 0.6);
     max-width: calc(100% - 1rem);
     height: calc(15vh - 0.5rem);
     border-radius: 100px;
@@ -39,17 +39,20 @@ body{
     font-weight: bolder;
     display: flex;
     font-variant: small-caps;
-    font-family:'Merienda';
+    font-family:'Tapestry';
     margin-left: 2rem;
     margin-right: auto;
     height: fit-content;
     width: fit-content;
+    color: rgba(245, 245, 245, 0.9);
+    text-decoration: none;
 }
 .logo_name{
     margin: 0.5rem;
 }
 .logo_name::first-letter{
-    color: rgb(68, 0, 255);
+    color: black;
+    text-shadow: 0 0 4px whitesmoke;
 }
 .menu{
     margin-left: auto;
@@ -111,7 +114,7 @@ body{
 }
 .about_text_2{
     margin: 0%;
-    font-family: 'Tapestry';
+    font-family: 'Zen Kurenaido';
     font-size: xxx-large;
 }
 .about_text_3{
