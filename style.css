@@ -158,7 +158,7 @@ body{
     flex-direction: column;
 }
 .about_header{
-    margin: .5rem auto ;
+    margin: .5rem auto 0rem auto;
     display: flex;
     align-items: center;
 }
@@ -168,8 +168,8 @@ body{
     margin: 0px 2rem ;
 }
 .about_container{
-    margin: auto;
-    width: 80%;
+    margin: 1.5rem auto 0rem auto;
+    width: 90%;
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
@@ -178,7 +178,7 @@ body{
 }
 .about_image_container{
     margin: 0rem 1rem;
-    width: 25rem;
+    width: 18rem;
     max-width: 40%;
     aspect-ratio: 1;
     border-radius: 30px;
