@@ -1,9 +1,8 @@
 // Percentage Animation //
-let keyFrames;
+let percentageKeyframes = document.createElement("style");
 function addLoader(element,percentage){
   let progress_color = percentage < 33.3? "rgb(206, 31, 31)" : percentage < 66.6 ? "yellow" : "rgb(44, 161, 69)";
-  keyFrames = document.createElement("style");
-  keyFrames.innerHTML = `
+  percentageKeyframes.innerHTML = `
     @keyframes loading {
       0% {
         background-image:conic-gradient(${progress_color} 0% ,${progress_color} ${percentage*0.02}%,grey ${percentage*0.02}%);
@@ -161,11 +160,11 @@ function addLoader(element,percentage){
       animation: loading 0.8s ease-in  ;
       background-image:conic-gradient(${progress_color} 0% ,${progress_color} ${percentage}%,grey ${percentage}%);
     }`;
-  document.head.appendChild(keyFrames);
+  document.head.appendChild(percentageKeyframes);
   element.classList.add("percentage_animation");
 }
 function removeLoader(element){
-  document.head.removeChild(keyFrames);
+  document.head.removeChild(percentageKeyframes);
   element.classList.remove("percentage_animation");
 }
 
@@ -192,4 +191,5 @@ function plusCard(){
 }
 function alterCard(idx){
   cardIndex=idx;
+  visibility();
 }
