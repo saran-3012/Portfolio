@@ -169,3 +169,46 @@ function removeLoader(element){
 }
 
 
+// Card Slider
+
+let cards=document.getElementsByClassName("project_cards");
+let cardIndex=-1;
+let totalCards=cards.length;
+let moveArrows=document.getElementsByClassName("move_arrows");
+let slideTimeout;
+function activeArrow(){
+  moveArrows[0].style.opacity=(cardIndex==-1)?"0.4":"1";
+  moveArrows[1].style.opacity=(cardIndex==totalCards)?"0.4":"1";
+}
+function minusCard(){
+  clearTimeout(slideTimeout);
+  cardIndex=(cardIndex>-1)?cardIndex-1:totalCards-1;
+  activeArrow();
+  showCard();
+}
+function plusCard(){
+  clearTimeout(slideTimeout);
+  cardIndex=(cardIndex<totalCards)?cardIndex+1:0;
+  activeArrow();
+  showCard();
+}
+function setCard(idx){
+  clearTimeout(slideTimeout);
+  cardIndex=(cardIndex==idx)?-1:idx;
+  activeArrow();
+  showCard();
+}
+document.head.appendChild(sliderStyles);
+function showCard(){
+  for(let i=0;i<totalCards;i++){
+    if(i==cardIndex){
+      cards[i].classList.add("active");
+      cards[i].classList.remove("inactive");
+    }
+    else{
+      cards[i].classList.add("inactive");
+      cards[i].classList.remove("active");
+    }
+  }
+  slideTimeout = setTimeout(plusCard,3000);
+}
