@@ -169,27 +169,3 @@ function removeLoader(element){
 }
 
 
-// Cards Slider //
-let cardIndex=0;
-let cards=document.getElementsByClassName("project_cards");
-let totalCards=cards.length;
-function visibility(){
-  document.getElementsByClassName("move_arrows")[0].style.opacity=(cardIndex==0)?"0.3":"1";
-  document.getElementsByClassName("move_arrows")[1].style.opacity=(cardIndex==totalCards+1)?"0.3":"1";
-}
-function minusCard(){
-  if(cardIndex>0){
-    cardIndex-=1;
-  }
-  visibility();
-}
-function plusCard(){
-  if(cardIndex<=totalCards){
-    cardIndex+=1;
-  }
-  visibility();
-}
-function alterCard(idx){
-  cardIndex=idx;
-  visibility();
-}
