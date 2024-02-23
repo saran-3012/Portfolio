@@ -165,7 +165,8 @@ body{
 }
 .about_header > p{
     font-family: 'Protest Guerrilla';
-    font-size: 60px;
+    font-variant: small-caps;
+    font-size: 50px;
     margin: 0px 2rem ;
 }
 .about_container{
@@ -276,11 +277,12 @@ body{
 }
 .skills_header > p{
     font-family: 'Protest Guerrilla';
-    font-size: 60px;
+    font-variant: small-caps;
+    font-size: 50px;
     margin: 0px 2rem ;
 }
 .arrows{
-    height: 60px;
+    height: 50px;
     aspect-ratio: 1;
 }
 .skills_container{
@@ -361,111 +363,111 @@ body{
 }
 .project_header > p{
     font-family: 'Protest Guerrilla';
-    font-size: 60px;
+    font-variant: small-caps;
+    font-size: 50px;
     margin: 0px 2rem ;
 }
 .project_header > .arrows{
     width:90px;
 }
 .project_container{
-    /* background-color: aqua; */
-    width: 80%;
+    width: 70%;
     height: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .move_arrows{
+    margin: .5rem;
     height: 3rem;
     aspect-ratio: 1;
     cursor: pointer;
-    /* background-color: #808080; */
 }
 .project_slider{
-    /* background-color: bisque; */
     width: 100%;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.project_slider:hover .project_cards{
-    filter: grayscale(100%) opacity(40%);
+    overflow-x: hidden;
+
 }
 .project_cards{
-    border-radius: 8px;
-    height: 80%;
-    width: 15%;
-    margin: 0 .5rem 0 .5rem;
-    background-image: url(./Components/project_image_1.png);
-    cursor: pointer;
-    transition: all 250ms ease;
-}
-.project_slider .project_cards:hover{
-    filter: grayscale(0%) opacity(100%);
-}
-.project_cards:nth-child(odd){
-    transform: translateY(16px);
-}
-.project_cards:nth-child(even){
-    transform: translateY(-16px);
-}
-.project_cards:hover{
-    transform: translateY(0) scale(1.1);
-}
-.project_name{
-    height: 100%;
+    height:90%;
     width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(3px) saturate(100%);
-    font-size: medium;
-    font-family: 'Electrolize';
-    font-weight: bolder;
-    color: black;
-    text-shadow: -1px 1px 0 whitesmoke,
-                1px 1px 0 whitesmoke,
-                1px -1px 0 whitesmoke,
-                -1px -1px 0 whitesmoke;
-}
-.project_details{
-    height: 100%;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(3px) saturate(100%);
-    font-size: medium;
-    font-family: 'Electrolize';
-    font-weight: bolder;
-    color: black;
-    text-shadow: -1px 1px 0 whitesmoke,
-                1px 1px 0 whitesmoke,
-                1px -1px 0 whitesmoke,
-                -1px -1px 0 whitesmoke;
-}
-.project_cards:hover .project_name{
+    flex-shrink: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.active{
-    filter: grayscale(0%) opacity(100%) !important;
-    transform: translateY(0%) !important;
-    flex-shrink:0;
+.project_image{
+    border-radius: 10px;
+    height: 100%;
     width:auto;
-    aspect-ratio:16/9;
 }
-.active > .project_name{
-    display: none !important;
-}
-.active > .project_details{
+.project_info{
+    height: 100%;
+    width: auto;
+    flex-grow: 1;
     display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    font-family: 'Electrolize';
+
+}
+.project_info > h1{
+    margin: 1rem;
+    font-size: larger;
+}
+.project_info > p{
+    margin: 1rem;
+    font-size: large;
+    color: rgba(245, 245, 245, 0.6);
+}
+/* Slider Animation */
+.active{
+    display: flex;
+    animation: slider_active 800ms ease-in-out;
+    transform: translateX(0%);
+}
+.active_prev{
+    display: flex;
+    animation: slider_active_prev 800ms ease-in-out;
+    transform: translateX(-100%);
+}
+.active_next{
+    display: flex;
+    animation: slider_active_next 800ms ease-in-out;
+    transform: translateX(100%);
 }
 .inactive{
-    transition: all 250ms ease;
-    flex-shrink:1;
+    display: none;
 }
+@keyframes slider_active{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes slider_active_prev{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+@keyframes slider_active_next{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+/* --------- */
 #contact{
     background-color: rgb(206, 31, 31);
 }

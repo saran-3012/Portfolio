@@ -172,43 +172,40 @@ function removeLoader(element){
 // Card Slider
 
 let cards=document.getElementsByClassName("project_cards");
-let cardIndex=-1;
 let totalCards=cards.length;
+let currCard=0;
+let prevCard=totalCards-1;
+let nextCard=1;
 let moveArrows=document.getElementsByClassName("move_arrows");
 let slideTimeout;
-function activeArrow(){
-  moveArrows[0].style.opacity=(cardIndex==-1)?"0.4":"1";
-  moveArrows[1].style.opacity=(cardIndex==totalCards)?"0.4":"1";
-}
 function minusCard(){
   clearTimeout(slideTimeout);
-  cardIndex=(cardIndex>-1)?cardIndex-1:totalCards-1;
-  activeArrow();
+  currCard=(currCard>0)?currCard-1:totalCards-1;
+  prevCard=(currCard>0)?currCard-1:totalCards-1;
+  nextCard=(currCard<totalCards-1)?currCard+1:0;
   showCard();
 }
 function plusCard(){
   clearTimeout(slideTimeout);
-  cardIndex=(cardIndex<totalCards)?cardIndex+1:0;
-  activeArrow();
+  currCard=(currCard<totalCards-1)?currCard+1:0;
+  prevCard=(currCard>0)?currCard-1:totalCards-1;
+  nextCard=(currCard<totalCards-1)?currCard+1:0;
   showCard();
 }
-function setCard(idx){
-  clearTimeout(slideTimeout);
-  cardIndex=(cardIndex==idx)?-1:idx;
-  activeArrow();
-  showCard();
-}
-document.head.appendChild(sliderStyles);
+showCard();
 function showCard(){
+  console.log(prevCard,currCard,nextCard);
+  cards[prevCard].classList.remove("active");
+  cards[prevCard].classList.add("active_prev");
+  cards[currCard].classList.remove("active_next");
+  cards[currCard].classList.add("active");
+  cards[nextCard].classList.remove("inactive");
+  cards[nextCard].classList.add("active_next");
   for(let i=0;i<totalCards;i++){
-    if(i==cardIndex){
-      cards[i].classList.add("active");
-      cards[i].classList.remove("inactive");
-    }
-    else{
+    if(i!=prevCard&&i!=currCard&&i!=nextCard){
+      cards[i].classList.remove("active_prev");
       cards[i].classList.add("inactive");
-      cards[i].classList.remove("active");
     }
   }
-  slideTimeout = setTimeout(plusCard,3000);
+  slideTimeout=setTimeout(plusCard,3000);
 }
