@@ -467,6 +467,45 @@ body{
         transform: translateX(100%);
     }
 }
+.active_reverse{
+    display: flex;
+    animation: slider_active_reverse 800ms ease-in-out;
+    transform: translateX(0%);
+}
+.active_prev_reverse{
+    display: flex;
+    animation: slider_active_prev_reverse 800ms ease-in-out;
+    transform: translateX(-100%);
+}
+.active_next_reverse{
+    display: flex;
+    animation: slider_active_next_reverse 800ms ease-in-out;
+    transform: translateX(100%);
+}
+@keyframes slider_active_reverse{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes slider_active_prev_reverse{
+    from{
+        transform: translateX(-200%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+@keyframes slider_active_next_reverse{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
 /* --------- */
 #contact{
     background-color: rgb(206, 31, 31);

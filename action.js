@@ -183,29 +183,63 @@ function minusCard(){
   currCard=(currCard>0)?currCard-1:totalCards-1;
   prevCard=(currCard>0)?currCard-1:totalCards-1;
   nextCard=(currCard<totalCards-1)?currCard+1:0;
-  showCard();
+  reverseCard();
 }
 function plusCard(){
   clearTimeout(slideTimeout);
   currCard=(currCard<totalCards-1)?currCard+1:0;
   prevCard=(currCard>0)?currCard-1:totalCards-1;
   nextCard=(currCard<totalCards-1)?currCard+1:0;
-  showCard();
+  forwardCard();
 }
-showCard();
-function showCard(){
-  console.log(prevCard,currCard,nextCard);
-  cards[prevCard].classList.remove("active");
-  cards[prevCard].classList.add("active_prev");
-  cards[currCard].classList.remove("active_next");
-  cards[currCard].classList.add("active");
-  cards[nextCard].classList.remove("inactive");
-  cards[nextCard].classList.add("active_next");
+forwardCard();
+function forwardCard(){
   for(let i=0;i<totalCards;i++){
-    if(i!=prevCard&&i!=currCard&&i!=nextCard){
+    if(i==prevCard){
+      cards[i].classList.remove("active");
+      cards[i].classList.add("active_prev");
+    }
+    else if(i==currCard){
+      cards[i].classList.remove("active_next");
+      cards[i].classList.add("active");
+    }
+    else if(i==nextCard){
+      cards[i].classList.remove("inactive");
+      cards[i].classList.add("active_next");
+    }
+    else{
+      console.log(i)
       cards[i].classList.remove("active_prev");
       cards[i].classList.add("inactive");
     }
+    cards[i].classList.remove("active_prev_reverse");
+    cards[i].classList.remove("active_reverse");
+    cards[i].classList.remove("active_next_reverse");
+  }
+  slideTimeout=setTimeout(plusCard,3000);
+}
+function reverseCard(){
+  for(let i=0;i<totalCards;i++){
+    if(i==prevCard){
+      cards[i].classList.remove("inactive");
+      cards[i].classList.add("active_prev_reverse");
+    }
+    else if(i==currCard){
+      cards[i].classList.remove("active_prev_reverse");
+      cards[i].classList.add("active_reverse");
+    }
+    else if(i==nextCard){
+      cards[i].classList.remove("active_reverse");
+      cards[i].classList.add("active_next_reverse");
+    }
+    else{
+      console.log(i)
+      cards[i].classList.remove("active_next_reverse");
+      cards[i].classList.add("inactive");
+    }
+    cards[i].classList.remove("active_prev");
+    cards[i].classList.remove("active");
+    cards[i].classList.remove("active_next");
   }
   slideTimeout=setTimeout(plusCard,3000);
 }
