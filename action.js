@@ -170,7 +170,7 @@ function removeLoader(element){
 
 
 // Card Slider
-
+let Slider=document.getElementsByClassName("project_slider")[0];
 let cards=document.getElementsByClassName("project_cards");
 let totalCards=cards.length;
 let currCard=0;
@@ -195,22 +195,22 @@ function plusCard(){
 forwardCard();
 function forwardCard(){
   for(let i=0;i<totalCards;i++){
+    console.log(prevCard,currCard,nextCard);
     if(i==prevCard){
-      cards[i].classList.remove("active");
       cards[i].classList.add("active_prev");
+      cards[i].classList.remove("active");
     }
     else if(i==currCard){
-      cards[i].classList.remove("active_next");
       cards[i].classList.add("active");
+      cards[i].classList.remove("active_next");
     }
     else if(i==nextCard){
-      cards[i].classList.remove("inactive");
       cards[i].classList.add("active_next");
+      cards[i].classList.remove("inactive");
     }
     else{
-      console.log(i)
-      cards[i].classList.remove("active_prev");
       cards[i].classList.add("inactive");
+      cards[i].classList.remove("active_prev");
     }
     cards[i].classList.remove("active_prev_reverse");
     cards[i].classList.remove("active_reverse");
@@ -243,3 +243,41 @@ function reverseCard(){
   }
   slideTimeout=setTimeout(plusCard,3000);
 }
+
+Slider.addEventListener('mouseover', () => clearTimeout(slideTimeout));
+Slider.addEventListener('mouseout', () => slideTimeout=setTimeout(plusCard,3000));
+
+// Contact Me Email
+
+document.getElementsByClassName("contact_form_grid")[0].addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const name = document.getElementById("visitor_name").value;
+  const email = document.getElementById("visitor_email").value;
+  const subject = document.getElementById("visitor_subject").value;
+  const message = document.getElementById("visitor_message").value;
+  const formUrl = "https://formspree.io/f/xqkrbpav";
+
+  fetch(formUrl, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message
+      })
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log("Success:", data);
+      alert("Message sent successfully!");
+      document.getElementsByClassName("contact_form_grid")[0].reset();
+  })
+  .catch(error => {
+      console.error("Error:", error);
+      alert("An error occurred while sending the message. Please try again later.");
+  });
+});

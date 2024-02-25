@@ -11,8 +11,8 @@
 <body>
     <header class="navbar">
         <a href="#" class="logo">
-            <h1 class="logo_name">Saran</h1>
-            <h1 class="logo_name">Kumar</h1>
+            <h1 class="logo_name">SARAN</h1>
+            <h1 class="logo_name">KUMAR</h1>
         </a>
         <div class="menu">
             <div class="menu_items">
@@ -44,7 +44,7 @@
         <div class="home_image_container"></div>
     </div>
     <div id="about">
-        <div class="about_header">
+        <div class="section_header">
             <p>About Me</p>
         </div>
         <div class="about_container">
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div id="skills">
-        <div class="skills_header">
+        <div class="section_header">
             <p>Skills</p>
             <img class="arrows" src="./Images/arrow_2_white.png" alt="arrow">
             <img class="arrows" src="./Images/arrow_2_white.png" alt="arrow">
@@ -160,7 +160,7 @@
         </div>
     </div>
     <div id="projects">
-        <div class="project_header">
+        <div class="section_header">
             <img src="./Images/dotted_arrow.png" alt="arrow" class="arrows">
             <p>Projects</p>
         </div>
@@ -169,35 +169,35 @@
                 <img src="./Images/left_arrow_white.png" alt="Left arrow" class="move_arrows">
             </div>
             <div class="project_slider">
-                <div class="project_cards" onclick="setCard(0)">
+                <div class="project_cards">
                     <img src="./Components/project_image_1.png" alt="YouTube Clone" class="project_image">
                     <div class="project_info">
                         <h1 class="project_name">YouTube Clone</h1>
-                        <p class="project_details">YouTube Clone is a front-end web created with basic react.js and react hooks.</p>
+                        <p class="project_details">YouTube Clone is a front-end web built with basic react.js and react hooks. <br>Currently under development!</p>
                     </div>
                 </div>
-                <div class="project_cards" onclick="setCard(1)">
-                    <img src="./Components/project_image_1.png" alt="YouTube Clone" class="project_image">
+                <div class="project_cards">
+                    <img src="./Components/project_image_2.png" alt="Portfolio" class="project_image">
                     <div class="project_info">
-                        <h1 class="project_name">YouTube Clone</h1>
-                        <p class="project_details">This is youtube clone</p>
+                        <h1 class="project_name">Portfolio Website</h1>
+                        <p class="project_details">Personalized portfolio website created with HTML, CSS, Javascript for front-end and events.</p>
                     </div>
                 </div>
-                <div class="project_cards" onclick="setCard(2)">
-                    <img src="./Components/project_image_1.png" alt="YouTube Clone" class="project_image">
+                <div class="project_cards">
+                    <img src="./Components/project_image_3.jpg" alt="FileShare" class="project_image">
                     <div class="project_info">
-                        <h1 class="project_name">YouTube Clone</h1>
-                        <p class="project_details">This is youtube clone</p>
+                        <h1 class="project_name">FileShare</h1>
+                        <p class="project_details">FileShare is a web that allows the users to share files using a unique keys without login interfaces. <br>Assisted in positioning and designing the interface.</p>
                     </div>
                 </div>
-                <div class="project_cards" onclick="setCard(3)">
-                    <img src="./Components/project_image_1.png" alt="YouTube Clone" class="project_image">
+                <div class="project_cards">
+                    <img src="./Components/project_image_4.jpg" alt="Object Following Robot" class="project_image">
                     <div class="project_info">
-                        <h1 class="project_name">YouTube Clone</h1>
-                        <p class="project_details">This is youtube clone</p>
+                        <h1 class="project_name">Object Following Robot</h1>
+                        <p class="project_details">Object Following Robot is an arduino based project, which detects the objects falls under the sensor and follows the object.</p>
                     </div>
                 </div>
-                <div class="project_cards" onclick="setCard(4)">
+                <div class="project_cards">
                     <img src="./Components/project_image_1.png" alt="YouTube Clone" class="project_image">
                     <div class="project_info">
                         <h1 class="project_name">YouTube Clone</h1>
@@ -210,9 +210,59 @@
             </div>
         </div>
     </div>
-    <footer id="contact">
+    <div id="contact">
+        <div class="section_header">
+            <p>Contact Me</p>
+        </div>
+        <div class="contact_container">
+            <form action="" method="post" class="contact_form_grid">
+                <div class="contact_items contact_name">
+                    <label for="visitor_name" class="contact_input_label">Name</label>
+                    <input type="text" name="Name" placeholder="Your Name" class="contact_input_space" id="visitor_name">
+                </div>
+                <div class="contact_items contact_email">
+                    <label for="visitor_email" class="contact_input_label">Email</label>
+                    <input type="email" name="Email" placeholder="Your Email" class="contact_input_space" id="visitor_email">
+                </div>
+                <div class="contact_items contact_subject">
+                    <label for="visitor_subject" class="contact_input_label">Subject</label>
+                    <input type="text" name="Subject" placeholder="Your Subject" class="contact_input_space" id="visitor_subject">
+                </div>
+                <div class="contact_items contact_message">
+                    <label for="visitor_message" class="contact_input_label">Message</label>
+                    <textarea name="Message" placeholder="Your Message" class="contact_input_space" cols="60" rows="12" id="visitor_message"></textarea>
+                </div>
+                <div class="contact_submit">
+                    <input type="submit" name="submit" value="SUBMIT" onclick="sendMail()" id="contact_subject_button">
+                </div>
+            </form>
+        </div>
+        <footer class="contact_footer">
+            <div class="footer_grid_container">
+                <div class="footer_my_name">
+                    <h1>Saran Kumar</h1>
+                </div>
+                <div class="footer_my_details">
+                    <div>
+                        <img src="./Images/mail.png" alt="mail" class="footer_icon">
+                        <p class="footer_text">sarankumar.95977@gmail.com</p>
+                    </div>
+                    <div>
+                        <img src="./Images/location.png" alt="location" class="footer_icon">
+                        <p class="footer_text">Chennai</p>
+                    </div>
+                </div>
+                <div class="footer_hyperlinks">
+                    <a href="https://www.linkedin.com/in/saran-kumar-s-30122k03/" target="_blank" class="linkedin_link" back></a>
+                    <a href="https://github.com/saran-3012" target="_blank" class="github_link"></a>
+                    <a href="https://www.skillrack.com/profile/355224/b99ff2d43db8b98c8a11e06da74ea68d2a8ec781" target="_blank" class="skillrack_link"></a>
+                    <a href="https://leetcode.com/saran_3012/" target="_blank" class="leetcode_link"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-    </footer>
     <script src="action.js"></script>
 </body>
 </html>
+

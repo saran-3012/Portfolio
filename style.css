@@ -21,6 +21,7 @@ body{
     margin: 0%;
     
 }
+/* ===NAVBAR=== */
 .navbar{
     z-index: 20;
     position: sticky;
@@ -36,24 +37,22 @@ body{
              0 0 5px #ffffff;
 }
 .logo{
-    font-size:x-large;
+    font-size:large;
     font-weight: bold;
     display: flex;
-    font-variant: small-caps;
     font-family:'Anta';
     margin-left: 2rem;
     margin-right: auto;
     height: fit-content;
     width: fit-content;
-    color: rgba(245, 245, 245, 0.9);
+    background: linear-gradient(85deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
 }
 .logo_name{
     margin: 0.5rem;
-}
-.logo_name::first-letter{
-    color: black;
-    text-shadow: 0 0 4px whitesmoke;
 }
 .menu{
     margin-left: auto;
@@ -93,12 +92,14 @@ body{
 .menu_items a:hover::after, .menu_items a:active::after{
     width: 100%;
 }
+/* ===GENERAL=== */
 #home, #skills, #projects, #contact, #about{
     height: 85svh;
     max-width: 100%;
     display: flex;
     scroll-snap-align: end;
 }
+/* ===HOME=== */
 #home{
     align-items: center;
     justify-content: space-evenly;
@@ -121,6 +122,10 @@ body{
     margin: 0%;
     font-family: 'Zen Kurenaido';
     font-size: xxx-large;
+    background: linear-gradient(85deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .home_text_3{
     margin: 0%;
@@ -131,43 +136,50 @@ body{
     margin-top: 4rem;
     width: fit-content;
     height: fit-content;
-    padding: 1rem;
+    padding: calc(1rem - 2px);
     border-radius: 50px;
     text-decoration: none;
-    font-size: x-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;    
+    font-family: 'Electrolize';
     color: rgba(245, 245, 245, 0.9);
-    background: linear-gradient(217deg, rgb(0, 140, 255), rgba(0, 0, 0, 0) ),
-            linear-gradient(127deg, rgb(116, 1, 247), rgba(0,255,0,0) ),
-            linear-gradient(336deg, rgb(16, 16, 159), rgba(0,0,255,0) );
+    box-sizing: border-box;
+    border: 2px solid rgba(76, 0, 255, 0.9);
+    background-image:   linear-gradient(217deg, rgb(0, 140, 255), rgba(0, 0, 0, 0) ),
+                        linear-gradient(127deg, rgb(116, 1, 247), rgba(0,255,0,0) ),
+                        linear-gradient(336deg, rgb(16, 16, 159), rgba(0,0,255,0) );
     transition: all 150ms ease;
 }
-.resume_download:hover{
-    box-shadow: 0 0 50px 10px rgb(68, 0, 255);
+.resume_download:hover, .resume_download:active{
+    background-image: transparent;
+    background: linear-gradient(85deg, rgb(0, 140, 255) 0%, rgb(116, 1, 247) 50%, rgb(5, 153, 252) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .resume_download:active{
-    box-shadow: 0 0 50px 20px rgb(68, 0, 255);
+    box-shadow: 0 0 50px 10px rgb(68, 0, 255);
 }
 .home_image_container{
     width: 25rem;
     aspect-ratio: 1;
     border-radius: 28% 72% 74% 26% / 30% 50% 50% 70% ;
-    background-image: url(./Images/Profile_pic.jpg);
+    background-image: url(./Images/Profile_pic_1.jpg);
     background-size: cover;
 }
-#about{
-    flex-direction: column;
-}
-.about_header{
+/* ===GENERAL=== */
+.section_header{
     margin: .5rem auto 0rem auto;
     display: flex;
     align-items: center;
 }
-.about_header > p{
-    font-family: 'Protest Guerrilla';
-    font-variant: small-caps;
+.section_header > p{
+    font-family: 'Poppins';
     font-size: 50px;
     margin: 0px 2rem ;
+}
+/* ===ABOUT=== */
+#about{
+    flex-direction: column;
 }
 .about_container{
     margin: 1.5rem auto 0rem auto;
@@ -184,8 +196,9 @@ body{
     max-width: 40%;
     aspect-ratio: 1;
     border-radius: 30px;
-    background-image: url(./Images/CSS_template.jpeg);
+    background-image: url(./Images/Profile_pic_2.png);
     background-size: cover;
+    background-position: center;
 }
 .about_text_container{
     margin-left: 1.5rem;
@@ -203,16 +216,26 @@ body{
     height: fit-content;
     width: fit-content;
     border-radius: 50px;
-    padding: 1rem;
+    padding: calc(1rem - 2px);
     color: rgba(245, 245, 245, 0.9);
-    background: linear-gradient(217deg, rgb(0, 140, 255), rgba(0, 0, 0, 0) ),
+    background-image: linear-gradient(217deg, rgb(0, 140, 255), rgba(0, 0, 0, 0) ),
             linear-gradient(127deg, rgb(116, 1, 247), rgba(0,255,0,0) ),
             linear-gradient(336deg, rgb(16, 16, 159), rgba(0,0,255,0) );
     text-decoration: none;
     transition: all 150ms ease;
+    font-family: 'Electrolize';
+    box-sizing: border-box;
+    border: 2px solid rgba(76, 0, 255, 0.9);
 }
 .contact_me:hover, .contact_me:active{
-    box-shadow: 0 0 50px 20px rgb(68, 0, 255);
+    background-image: transparent;
+    background: linear-gradient(85deg, rgb(0, 140, 255) 0%, rgb(116, 1, 247) 50%, rgb(5, 153, 252) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.contact_me:active{
+    box-shadow: 0 0 50px 10px rgb(68, 0, 255);
 }
 .about_hyperlink_container{
     margin: 0rem;
@@ -267,19 +290,9 @@ body{
 .leetcode_link:active{
     box-shadow: 0 0 50px 10px rgb(157, 0, 255);
 }
+/* ===SKILLS=== */
 #skills{
     flex-direction: column;
-}
-.skills_header{
-    margin: .5rem auto 0rem auto;
-    display: flex;
-    align-items: center;
-}
-.skills_header > p{
-    font-family: 'Protest Guerrilla';
-    font-variant: small-caps;
-    font-size: 50px;
-    margin: 0px 2rem ;
 }
 .arrows{
     height: 50px;
@@ -295,7 +308,6 @@ body{
     align-items: center;
     justify-content: center;
 }
-
 .skills_items{
     position: relative;
     margin: 2% 3%;
@@ -352,23 +364,15 @@ body{
                 1px -1px 0 whitesmoke,
                 -1px -1px 0 whitesmoke;
 }
+/* ===PROJECTS=== */
 #projects{
     flex-direction: column;
     align-items: center;
 }
-.project_header{
-    margin: .5rem auto 0rem auto;
-    display: flex;
-    align-items: center;
-}
-.project_header > p{
-    font-family: 'Protest Guerrilla';
-    font-variant: small-caps;
-    font-size: 50px;
-    margin: 0px 2rem ;
-}
-.project_header > .arrows{
-    width:90px;
+#projects > .section_header > .arrows{
+    height: 60px;
+    width: 80px;
+    aspect-ratio: auto;
 }
 .project_container{
     width: 70%;
@@ -379,9 +383,13 @@ body{
 }
 .move_arrows{
     margin: .5rem;
-    height: 3rem;
+    height: 2.5rem;
     aspect-ratio: 1;
     cursor: pointer;
+    opacity: 50%;
+}
+.move_arrows:hover, .move_arrows:active{
+    opacity: 100%;
 }
 .project_slider{
     width: 100%;
@@ -507,6 +515,134 @@ body{
     }
 }
 /* --------- */
+/* ===CONTACT=== */
 #contact{
-    background-color: rgb(206, 31, 31);
+    flex-direction: column;
+    align-items: center;
+}
+.contact_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: fit-content ;
+    width: 90%;
+}
+.contact_name{
+    grid-area: name;
+}
+.contact_email{
+    grid-area: email;
+}
+.contact_subject{
+    grid-area: subject;
+}
+.contact_message{
+    grid-area: message;
+}
+.contact_submit{
+    grid-area: submit;
+}
+.contact_form_grid{
+    display: grid;
+    height: fit-content;
+    width: fit-content;
+    gap: .4rem;
+    width: fit-content;
+    grid-template-areas:    'name name message message message'
+                            'email email message message message'
+                            'subject subject message message message'
+                            'submit submit message message message';
+}
+.contact_items{
+    padding: .4rem;
+    border-radius: .5rem;
+    border: 2px solid rgba(76, 0, 255, 0.4);
+}
+.contact_input_label{
+    font-family: 'poppins';
+    display: block;
+}
+.contact_input_space{
+    margin: .2rem 0 0 0;
+    background-color: rgb(18, 18, 18);
+    color: rgba(245, 245, 245, 0.9);
+    font-family: 'poppins';
+    display: block;
+    border: none;
+    outline: none;
+}
+.contact_items:has(.contact_input_space:focus){
+    border-color: rgb(76, 0, 255);
+}
+#contact_subject_button{
+    font-family: 'poppins';
+    border: 2px solid rgba(76, 0, 255, 0.6);
+    background-image: linear-gradient(217deg, rgb(0, 140, 255), rgba(0, 0, 0, 0) ),
+            linear-gradient(127deg, rgb(116, 1, 247), rgba(0,255,0,0) ),
+            linear-gradient(336deg, rgb(16, 16, 159), rgba(0,0,255,0) );
+    color: rgba(245, 245, 245, 0.9);
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    transition: all 200ms ease;
+}
+#contact_subject_button:hover, #contact_subject_button:active{
+    background-image: transparent;
+    color: rgba(76, 0, 255, 0.9);
+    background: linear-gradient(85deg, rgb(0, 140, 255) 0%, rgb(116, 1, 247) 50%, rgb(5, 153, 252) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.contact_footer{
+    margin-top: .8rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 136, 255, 0.9);
+}
+.footer_grid_container{
+    margin: auto;
+    height: 100%;
+    width: 75%;
+    display: grid;
+    grid-template-areas:    'myName myName hyperlinks hyperlinks hyperlinks'
+                            'myDetail myDetail hyperlinks hyperlinks hyperlinks';
+}
+.footer_my_name{
+    grid-area: myName;
+    max-height: fit-content;
+}
+.footer_my_name > h1{
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    font-family: 'Poppins';
+}
+.footer_my_details{
+    grid-area: myDetail;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_my_details > div{
+    margin: 0%;
+    width:60%;
+    display: flex;
+    align-items: center;
+}
+.footer_icon{
+    height: 1rem;
+    margin: 0 0 .5rem .5rem;
+}
+.footer_text{
+    margin: 0 0 .5rem .5rem;
+    font-size: small;
+    font-family: 'Poppins';
+}
+.footer_hyperlinks{
+    grid-area: hyperlinks;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
