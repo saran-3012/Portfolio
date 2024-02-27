@@ -524,7 +524,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: fit-content ;
+    max-height: 80% ;
     width: 90%;
 }
 .contact_name{
@@ -574,7 +574,7 @@ body{
 .contact_items:has(.contact_input_space:focus){
     border-color: rgb(76, 0, 255);
 }
-#contact_subject_button{
+#contact_submit_button{
     font-family: 'poppins';
     border: 2px solid rgba(76, 0, 255, 0.6);
     background-image: linear-gradient(217deg, rgb(0, 140, 255), rgba(0, 0, 0, 0) ),
@@ -587,7 +587,7 @@ body{
     box-sizing: border-box;
     transition: all 200ms ease;
 }
-#contact_subject_button:hover, #contact_subject_button:active{
+#contact_submit_button:hover, #contact_submit_button:active{
     background-image: transparent;
     color: rgba(76, 0, 255, 0.9);
     background: linear-gradient(85deg, rgb(0, 140, 255) 0%, rgb(116, 1, 247) 50%, rgb(5, 153, 252) 100%);
@@ -598,7 +598,7 @@ body{
 .contact_footer{
     margin-top: .8rem;
     width: 100%;
-    height: 100%;
+    height: 30%;
     background-color: rgba(0, 136, 255, 0.9);
 }
 .footer_grid_container{
