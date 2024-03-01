@@ -524,6 +524,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
     max-height: 80% ;
     width: 90%;
 }
